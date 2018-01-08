@@ -35,8 +35,8 @@ class PetsController < ApplicationController
   end
 
   post '/pets/:id' do
-    binding.pry
-    @pet = Pet.find(params[:pet][:id])
+    #binding.pry
+    @pet = Pet.find(params[:id])
 
     if params[:owner][:id]
       owner = Owner.find(params[:owner][:id])
