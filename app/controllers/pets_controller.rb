@@ -14,7 +14,7 @@ class PetsController < ApplicationController
     if params[:owner][:id]
       owner = Owner.find(params[:owner][:id])
     else
-      owner = Owner.new(params[:owner])
+      owner = Owner.create(params[:owner])
     end
 
     pet = Pet.new(params[:pet])
