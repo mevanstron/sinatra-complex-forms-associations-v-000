@@ -36,7 +36,7 @@ class PetsController < ApplicationController
 
   post '/pets/:id' do
     @pet = Pet.find(params[:pet][:id])
-    binding.pry
+    #binding.pry
     if params[:owner][:id]
       owner = Owner.find(params[:owner][:id])
     else
