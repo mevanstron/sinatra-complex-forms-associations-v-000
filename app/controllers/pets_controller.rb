@@ -35,7 +35,7 @@ class PetsController < ApplicationController
   end
 
   post '/pets/:id' do
-    
+
     @pet = Pet.find(params[:id])
 
     if params[:owner][:id]
