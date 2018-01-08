@@ -11,11 +11,11 @@ class PetsController < ApplicationController
   end
 
   post '/pets' do
-    binding.pry
+    #binding.pry
     owner = Owner.find(parames[:owner][:id])
-    pet = Pet.new(params[:pet])
-    pet.owner = owner
-    pet.save
+    @pet = Pet.new(params[:pet])
+    @pet.owner = owner
+    @pet.save
     redirect to "pets/#{@pet.id}"
   end
 
