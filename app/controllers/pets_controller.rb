@@ -37,7 +37,6 @@ class PetsController < ApplicationController
   post '/pets/:id' do
 
     @pet = Pet.find(params[:id])
-    @pet.update(params[:pet])
     if params[:owner][:name]
       owner = Owner.create(params[:owner])
     elsif
@@ -45,6 +44,7 @@ class PetsController < ApplicationController
     end
     binding.pry
     @pet.owner = owner
+    @pet.update(params[:pet])
 
     redirect to "pets/#{@pet.id}"
   end
