@@ -20,7 +20,7 @@ class PetsController < ApplicationController
     pet = Pet.new(params[:pet])
     pet.owner = owner
     pet.save
-    
+
     redirect to "pets/#{pet.id}"
   end
 
