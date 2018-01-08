@@ -40,7 +40,7 @@ class PetsController < ApplicationController
     else
       owner = Owner.create(params[:owner])
     end
-    
+
     @pet = Pet.find(params[:pet][:id])
     redirect to "pets/#{@pet.id}"
   end
