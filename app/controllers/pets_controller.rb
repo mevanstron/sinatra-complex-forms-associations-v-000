@@ -43,7 +43,7 @@ class PetsController < ApplicationController
     elsif
       owner = Owner.find(params[:pet][:owner_id])
     end
-    #binding.pry
+    binding.pry
     @pet.owner = owner
 
     redirect to "pets/#{@pet.id}"
