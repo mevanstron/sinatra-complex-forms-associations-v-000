@@ -12,7 +12,7 @@ class OwnersController < ApplicationController
 
   post '/owners' do
     @owner = Owner.create(params[:owner])
-    #binding.pry
+
     if !params["pet"]["name"].empty?
       @owner.pets << Pet.create(name: params["pet"]["name"])
     end
@@ -33,7 +33,7 @@ class OwnersController < ApplicationController
   post '/owners/:id' do
     @owner = Owner.find(params[:id])
     @owner.update(params["owner"])
-    #binding.pry
+    
     if !params["pet"]["name"].empty?
       @owner.pets << Pet.create(name: params["pet"]["name"])
     end
