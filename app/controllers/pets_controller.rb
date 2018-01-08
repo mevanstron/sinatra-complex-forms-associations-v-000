@@ -22,7 +22,7 @@ class PetsController < ApplicationController
     pet.owner = owner
     pet.save
     binding.pry
-    redirect to "pets/#{@pet.id}"
+    redirect to "pets/#{pet.id}"
   end
 
   get '/pets/:id' do
