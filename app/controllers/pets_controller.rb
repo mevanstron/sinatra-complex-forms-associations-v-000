@@ -12,7 +12,7 @@ class PetsController < ApplicationController
 
   post '/pets' do
     binding.pry
-    owner = Owner.find(parames[:owner][:id])
+    owner = Owner.find(params[:owner][:id])
     @pet = Pet.new(params[:pet])
     @pet.owner = owner
     @pet.save
