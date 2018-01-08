@@ -35,7 +35,7 @@ class PetsController < ApplicationController
   end
 
   post '/pets/:id' do
-    #binding.pry
+    
     @pet = Pet.find(params[:id])
 
     if params[:owner][:id]
@@ -43,7 +43,7 @@ class PetsController < ApplicationController
     else
       owner = Owner.create(params[:owner])
     end
-
+    binding.pry
     redirect to "pets/#{@pet.id}"
   end
 end
